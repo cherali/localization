@@ -49,7 +49,7 @@ class ServerLocalization {
    *
    * @public
    */
-  static get<K extends keyof Localization>(parts?: K[]) {
+  static get<K extends keyof Localization>(parts?: K[]): Localization | ITranslation<K> {
     this.#validateGet(parts);
 
     const locale = this.#getLocale();

@@ -45,7 +45,7 @@ class ClientLocalization {
    *
    * @public
    */
-  static async get<K extends keyof Localization>(parts: K[]) {
+  static async get<K extends keyof Localization>(parts: K[]): Promise<ITranslation<K>> {
     this.#validateGet(parts);
 
     let loadings: Promise<boolean>[] = [];

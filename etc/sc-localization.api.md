@@ -38,7 +38,7 @@ export type NestedObject = {
 // @public
 export class ServerLocalization {
     constructor();
-    static get<K extends keyof Localization>(parts?: K[]): object;
+    static get<K extends keyof Localization>(parts?: K[]): Localization | ITranslation<K>;
     static init<T extends string>(options: LocalizationOptions<T>): void;
     static get locale(): Locales[number];
     static get localeDirection(): "rtl" | "ltr" | undefined;

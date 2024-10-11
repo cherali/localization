@@ -9,7 +9,7 @@ use to access the translations
 **Signature:**
 
 ```typescript
-static get<K extends keyof Localization>(parts?: K[]): object;
+static get<K extends keyof Localization>(parts?: K[]): Localization | ITranslation<K>;
 ```
 
 ## Parameters
@@ -49,7 +49,7 @@ _(Optional)_ list of parts/partition in your translation, or undefined
 </tbody></table>
 **Returns:**
 
-object
+Localization \| [ITranslation](./sc-localization.itranslation.md)<!-- -->&lt;K&gt;
 
 - if calls with `no params`<!-- -->: returns all the translation object base on locale.
 
