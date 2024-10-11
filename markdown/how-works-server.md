@@ -31,7 +31,7 @@ This function can be called in two ways:
 This function accepts two arguments, locale and handler <br>
 If the locale doesn't match the locals array you passed to the `init` function, this function executes `handler`.
 
-```js
+```ts
 localization.onMismatchLocale(currentLocale, defaultLocale => {
   // if locale doesn't match, do something (i.e, redirect)
 });
@@ -58,7 +58,7 @@ Let's see it in action, imagine you have this content in your translation file:
 <br>
 
 *And you already import the localization class* 
-```js
+```ts
 import { localization } from 'sc-localization/server'
 ```
 
@@ -82,7 +82,7 @@ console.log(trx.Common.logOut) // logs `log out`
 
 - `get()` (with argument)
 
-```js
+```ts
 // this return only translation related to `Home`
 const trx = localization.get(["Home"])
 

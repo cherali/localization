@@ -31,7 +31,7 @@ This function uses the value that `setLocale` stores in the localization class. 
 This function accepts two arguments, locale and handler <br>
 If the locale doesn't match the locals array you passed to the `init` function, this function executes `handler`.
 
-```js
+```ts
 localization.onMismatchLocale(currentLocale, defaultLocale => {
   // if locale doesn't match, do something (i.e, redirect)
 });
@@ -58,7 +58,7 @@ Let's see it in action, imagine you have this content in your translation file:
 <br>
 
 *And you already import the localization class* 
-```js
+```ts
 import { localization } from 'sc-localization/client'
 ```
 
@@ -66,7 +66,7 @@ import { localization } from 'sc-localization/client'
 
 - `get()` (with argument)
 
-```js
+```ts
 // this fetches/returns only translation related to `Home`
 const trx = await localization.get(["Home"])
 
@@ -101,7 +101,7 @@ What happen if need dynamic texts??? (replace placeholder with value in text) [R
 *Now, let's go through a scenario step by step:* <br>
 *consider `enablePartition` and `capitalizePartitionName` both set to `true`*
 
-```js
+```ts
 //*
 await localization.get(["Home"]) // fetches/returns home partition
 //

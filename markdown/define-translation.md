@@ -77,7 +77,7 @@ Now, let's configure init function, and there is 4 property required to set. ([m
 
 `init` function:
 
-```js
+```ts
 import { localization } from 'sc-localization/server' // if you use server localization
 
 

@@ -16,8 +16,8 @@ And we are done!
 <hr>
 
 Here an example for interpolate function using Regular Expression:
-```js
-function interpolate(text, params) {  
+```ts
+function interpolate(text: string, params: Record<string, string | number>) {  
   return text.replace(/{{\s*([^}]+)\s*}}/g, (match, name) => {  
     return params[name] !== undefined ? params[name] : match;  
   });  
@@ -25,7 +25,7 @@ function interpolate(text, params) {
 ```
 <br>
 
-```js
+```ts
 const trx =  localization.get(["Home"]) // imagine this returns {Home:{ text: "name is: {{name}}, and value is: {{value}}"}}
 
 console.log(interpolate(trx.Home.text, {name: 'A', value: 1})) // logs `name is: A, and value is: 1`
