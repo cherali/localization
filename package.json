@@ -3,7 +3,7 @@
   "description": "In-memory low bundle size, type support, file-base localization, for server-rendering and client-rendering js library/framework",
   "private": false,
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "repository": {
     "url": "cherali/localization"
