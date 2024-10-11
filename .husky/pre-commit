@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export CI="1"
+
+npx lint-staged
+pnpm test
