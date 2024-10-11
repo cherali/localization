@@ -29,19 +29,21 @@
     "url": "https://github.com/cherali/localization/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "server.d.ts",
+    "client.d.ts"
   ],
   "sideEffects": false,
   "exports": {
     "./server": {
       "import": "./dist/es/server.js",
       "require": "./dist/cjs/server.cjs",
-      "types": "./dist/sc-localization.d.ts"
+      "types": "./server.d.ts"
     },
     "./client": {
       "import": "./dist/es/client.js",
       "require": "./dist/cjs/client.cjs",
-      "types": "./dist/sc-localization.d.ts"
+      "types": "./client.d.ts"
     }
   },
   "scripts": {
