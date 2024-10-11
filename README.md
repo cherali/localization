@@ -1,5 +1,17 @@
 # sc-localization
 
+<div style="display:flex; gap: 4px;">
+
+[![build](https://img.shields.io/github/actions/workflow/status/cherali/localization/release_package.yml?logo=github&style=flat-square)](https://www.npmjs.com/package/sc-localization "build")
+
+[![NPM](https://img.shields.io/npm/v/sc-localization?color=cb3837&label=NPM&style=flat-square)](https://www.npmjs.com/package/sc-localization "Current npm version.")
+
+[![Typescript](https://img.shields.io/github/package-json/dependency-version/cherali/localization/dev/typescript?logo=typescript&logoColor=white&color=3178C6&label=Typescript&style=flat-square)](https://www.npmjs.com/package/typescript "Typescript version.")
+
+[![Dependencies](https://img.shields.io/librariesio/dependents/npm/sc-localization?label=Dependencies&style=flat-square)](https://www.npmjs.com/package/sc-localization "Dependencies")
+
+</div>
+
 In-memory, low bundle size, file-base localization package for JavaScript framework/library. Supports types, and works for both server and client. <br>
 This package provides core functionality that you need to add localization to your project, because of this, you can customize your app localization behavior as you desire. <br>
 Supports both server and client localization.
@@ -14,9 +26,10 @@ Supports both server and client localization.
 
 ## Features
 
-- Type support [add type](./markdown/add-type-support.md).
+- Type support ([add type](./markdown/add-type-support.md)).
 - No global wrapper around your entire app.
 - Low bundle size.
+- Read/Fetch translation files, thus translation files add zero bytes to the JavaScript final bundle size.
 - Zero dependency! (although server localization uses `fs` and `path`, but you already have these in node environment, therefore excluded from bundle size).
 - Customize the localization behavior as you desire (like, remove/keep default locale from url).
 - `[server localization]`: Loads all translation into memory, therefore getting translation texts in your component costs you `1`([more info](./markdown/resources.md)), also no effect on bundle size and no need to send all translation to client.
@@ -30,7 +43,7 @@ This package only reads/fetches translations and gives them to you, for the rest
 
 ## How It's Work?
 
-It's depends! :)) Whether you use client or server localization, for more info [check this link](./markdown/how-works.md)
+It's depends on whether you want to use server or client localization, for more info [Check this link](./markdown/how-works.md)
 
 ## Supporting Type
 
