@@ -36,6 +36,9 @@
   "sideEffects": false,
   "types": "./dist/sc-localization.d.ts",
   "exports": {
+    ".": {
+      "types": "./dist/sc-localization.d.ts"
+    },
     "./server": {
       "import": "./dist/es/server.js",
       "require": "./dist/cjs/server.cjs",
