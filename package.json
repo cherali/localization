@@ -34,6 +34,7 @@
     "client.d.ts"
   ],
   "sideEffects": false,
+  "types": "./dist/sc-localization.d.ts",
   "exports": {
     "./server": {
       "import": "./dist/es/server.js",
