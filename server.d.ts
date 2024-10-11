@@ -1,1 +1,1 @@
-export type { ServerLocalization as localization } from "./dist/sc-localization";
+export { ServerLocalization as localization } from "./dist/sc-localization";
