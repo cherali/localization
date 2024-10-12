@@ -1,7 +1,7 @@
 # How It's Work? (Client Localization)
 In this page you can read about how `client localization` class works behind the scene. <br>
 
-After importing localization, this class gives you 4 important static methods: (for more info [read doc](../docs/sc-localization.serverlocalization.md))
+After importing localization, this class gives you 4 important static methods: (for more info [read doc](../docs/sc-localization.clientlocalization.md))
 - init
 - setLocale
 - get
