@@ -1,16 +1,11 @@
 # sc-localization
 
-<div style="display:flex; gap: 4px;">
-
 [![build](https://img.shields.io/github/actions/workflow/status/cherali/localization/release_package.yml?logo=github&style=flat-square)](https://www.npmjs.com/package/sc-localization "build")
-
 [![NPM](https://img.shields.io/npm/v/sc-localization?color=cb3837&label=NPM&style=flat-square)](https://www.npmjs.com/package/sc-localization "Current npm version.")
-
 [![Typescript](https://img.shields.io/github/package-json/dependency-version/cherali/localization/dev/typescript?logo=typescript&logoColor=white&color=3178C6&label=Typescript&style=flat-square)](https://www.npmjs.com/package/typescript "Typescript version.")
-
-[![Dependencies](https://img.shields.io/librariesio/dependents/npm/sc-localization?label=Dependencies&style=flat-square)](https://www.npmjs.com/package/sc-localization "Dependencies")
-
-</div>
+[![Dependencies](https://img.shields.io/badge/Dependencies-0-orange?&style=flat-square)](https://www.npmjs.com/package/sc-localization "Dependencies")
+[![Bundle size](<https://img.shields.io/badge/Server_(gzip)-1.1_KB-7F27FF?&style=flat-square>)](https://www.npmjs.com/package/sc-localization "Server Localization Bundle Size")
+[![Bundle size](<https://img.shields.io/badge/Client_(gzip)-1.2_KB-7F27FF?&style=flat-square>)](https://www.npmjs.com/package/sc-localization "Client Localization Bundle Size")
 
 In-memory, low bundle size, file-base localization package for JavaScript framework/library. Supports types, and works for both server and client. <br>
 This package provides core functionality that you need to add localization to your project, because of this, you can customize your app localization behavior as you desire. <br>
@@ -26,7 +21,7 @@ Supports both server and client localization.
 
 ## Features
 
-- Type support ([add type](./markdown/add-type-support.md)).
+- Type support ([check this](#supporting-type)).
 - No global wrapper around your entire app.
 - Low bundle size.
 - Read/Fetch translation files, thus translation files add zero bytes to the JavaScript final bundle size.
@@ -47,7 +42,7 @@ It's depends on whether you want to use server or client localization, for more 
 
 ## Supporting Type
 
-If you using typescript, and your IDE supports `intelliSense` you can add your localization type, this helps you avoid mis-spelling words and easy access (less copy/paste) to nested translation when you press `.`, also this feature is very cool :).
+If you using typescript, and your IDE supports `intelliSense` you can add your localization type, this helps you avoid mis-spelling words and easy access (less copy/paste) to nested translation when you press `.`, cool! hah?! ([more info](./markdown/add-type-support.md)).
 
 ## Documentation
 
