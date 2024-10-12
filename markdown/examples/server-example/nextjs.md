@@ -61,7 +61,7 @@ declare global {
   - 4: `setLocale` handler must return consist locale for entire a request life-cycle
   - 5: handle mismatch locale, I'm using a middleware to override some behavior ([more info](#middleware)) 
 
-In development because of `HMR` you need to call `init` function each time you save the file, but in production no need to do this, and init `must` calls only once per app, you can do this however you want but I use environment variable and call init function in RootLayout, also using cookies to make sure the locale remain consistent for entire of request life-cycle <br>
+  In development because of `HMR` you need to call `init` function each time you save the file, but in production no need to do this, and init `must` calls only once per app, you can do this however you want but I use environment variable and call init function in RootLayout, also using cookies to make sure the locale remain consistent for entire of request life-cycle <br>
 
 First let's create a few helper in `src/utils/localization.ts`
 

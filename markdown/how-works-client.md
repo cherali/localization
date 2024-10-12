@@ -127,7 +127,4 @@ await localization.get(["Common"]) // fetches/return common partition
 // 2. [failed]: previous request failed to fetch => calls to fetch partition.
 // 3. [fetching]: previous request not resolved => just wait for it to be resolved.
 await localization.get(["Common"]) 
-//
-
-
 ```

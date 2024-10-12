@@ -76,7 +76,7 @@ declare global {
   - 4: call `setLocale` to change the current locale
   - 5: handle mismatch locale
 
-In development because of `HMR`, when you save file, the localization class loses all the translations, and need to load those translation again but the request is internal so you don't need to worry about, for saving locale let's use a state with zustand<br>
+  In development because of `HMR`, when you save file, the localization class loses all the translations, and need to load those translation again but the request is internal so you don't need to worry about, for saving locale let's use a state with zustand<br>
 
 Let's create few files: <br>
 

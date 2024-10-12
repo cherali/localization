@@ -17,7 +17,7 @@ Determine whether you want `client` localization or `server` localization, and r
   - [server localization](./how-works-server.md)
   - [client localization](./how-works-client.md)
 
-*How the client or server works is important, methods in both classes are almost identical, and the implementation is different for `init` and `get`.*
+  *How the client or server works is important, methods in both classes are almost identical, and the implementation is different for `init` and `get`.*
 
 <br>
 
@@ -42,7 +42,7 @@ Call `setLocale` function <br>
 
   + for `client` localization: This function is responsible for changing the localization locale, make sure you set the correct locale (using state, URL, cookies, ... will do this job).
 
-*If you are using server localization don't use URL (pathname), this changes each time the server receives a new request (using URL causes a mismatch in translation text that user requested locale).*
+  *If you are using server localization don't use URL (pathname), this changes each time the server receives a new request (using URL causes a mismatch in translation text that user requested locale).*
 
 <br>
 

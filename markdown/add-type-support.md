@@ -16,10 +16,11 @@ declare global {
   type Localization = typeof en | typeof fr; // localization types
 }
 ```
+<br><br>
 
 - For adding type if you are using `multiple files` for a locale strategy, copy this (`enablePartition: true`). <br>
 
-*Imagine you use the lowercase name for partition, and you set `capitalizePartitionName` to true, therefore you should have something like this in your `.d.ts` file*
+  *Imagine you use the lowercase name for partition, and you set `capitalizePartitionName` to true, therefore you should have something like this in your `.d.ts` file*
 
 ```ts
 import homeFr from "TRANSLATION_FOLDER_PATH/home/home.fr.json";
