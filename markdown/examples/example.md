@@ -14,25 +14,25 @@ It's better to read the steps, then watch examples.
 ## Steps
 - Step 0: <br>
 Determine whether you want `client` localization or `server` localization, and read how this package works behind the scenes.
-  - [server localization](./how-works-server.md)
-  - [client localization](./how-works-client.md)
+  - [server localization](../how-works-server.md)
+  - [client localization](../how-works-client.md)
 
   *How the client or server works is important, methods in both classes are almost identical, and the implementation is different for `init` and `get`.*
 
 <br>
 
 - Step 1: <br>
-Select your strategy and add files for the locales [more info](./define-translation.md).
+Select your strategy and add files for the locales [more info](../define-translation.md).
 
 <br>
 
 - Step 2: (optional)<br>
-If you are using typescript override corresponding types [more info](./add-type-support.md)
+If you are using typescript override corresponding types [more info](../add-type-support.md)
 
 <br>
 
 - Step 3: (very important)<br>
-Call the `init` function, Make sure this function calls `once` for the entire life-cycle of your app, if you are using server localization, `init` reads all translation files when called, so calling this function for each request is costly. [Resources Usage](./resources.md)
+Call the `init` function, Make sure this function calls `once` for the entire life-cycle of your app, if you are using server localization, `init` reads all translation files when called, so calling this function for each request is costly. [Resources Usage](../resources.md)
 
 <br>
 
@@ -63,7 +63,7 @@ You can customize the behavior of the localization as you desire.
   + client localization: Can do it with few ifs and the help of routing.
 
 
-If you want to change placeholder in text, [Read this](./dynamic-text.md). <br>
+If you want to change placeholder in text, [Read this](../dynamic-text.md). <br>
 
 And done! <br>
 
