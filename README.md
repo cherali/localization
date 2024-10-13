@@ -3,7 +3,7 @@
 [![build](https://img.shields.io/github/actions/workflow/status/cherali/localization/release_package.yml?logo=github&style=flat-square)](https://www.npmjs.com/package/sc-localization "build")
 [![NPM](https://img.shields.io/npm/v/sc-localization?color=cb3837&label=NPM&style=flat-square)](https://www.npmjs.com/package/sc-localization "Current npm version.")
 [![Typescript](https://img.shields.io/github/package-json/dependency-version/cherali/localization/dev/typescript?logo=typescript&logoColor=white&color=3178C6&label=Typescript&style=flat-square)](https://www.npmjs.com/package/typescript "Typescript version.")
-[![Dependencies](https://img.shields.io/badge/Dependencies-0-orange?&style=flat-square)](https://www.npmjs.com/package/sc-localization "Dependencies")
+[![Dependencies](https://img.shields.io/librariesio/dependents/npm/sc-localization?label=Dependencies&style=flat-square)](https://www.npmjs.com/package/sc-localization "Dependencies")
 [![Bundle size](<https://img.shields.io/badge/Server_(gzip)-1.1_KB-7F27FF?&style=flat-square>)](https://www.npmjs.com/package/sc-localization "Server Localization Bundle Size")
 [![Bundle size](<https://img.shields.io/badge/Client_(gzip)-1.2_KB-7F27FF?&style=flat-square>)](https://www.npmjs.com/package/sc-localization "Client Localization Bundle Size")
 
@@ -13,8 +13,8 @@ Supports both server and client localization.
 
 ## Definitions
 
-- `server localization`: Refers to tools which use server/node to render pages.
-- `client localization`: Refers to tools which use server/node to render pages.
+- `server localization`: Refers to tools that rely on server/node to render pages.
+- `client localization`: Refers to tools that rely on browsers to render pages.
 
 - `parts`: Refers to `1st depth keys` of translation object, also refers to the `1st depth keys` of locale file if you using single file for locale ([more info](./markdown/define-translation.md)).
 - `partition`: Imagine you don't like to have a big file that holds all your translations, and wants to separate it into smaller files and put relative texts near each other like 'common', 'home', 'about', and..., from now those smaller parts called `partition` (you may have heard of this as, segment, scope, namespace, and..., but the functionality is more important than its name).
@@ -48,7 +48,7 @@ If you using typescript, and your IDE supports `intelliSense` you can add your l
 
 - [Full Documentation](./docs/index.md)
 - [How It's Work](./markdown/how-works.md)
-- [Resources Usage](./markdown/resources.md)
+- [Resources Usage and Complexity](./markdown/resources.md)
 - [Define Translation](./markdown/define-translation.md)
 - [Dynamic Texts](./markdown/dynamic-text.md)
 - [Add Type Support](./markdown/add-type-support.md)
