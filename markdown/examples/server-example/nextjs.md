@@ -79,8 +79,7 @@ function initLocalization() {
       locales: localizationConfig.locales,
       defaultLocale: localizationConfig.defaultLocale,
       textDirection: {
-        en: "ltr",
-        fa: "rtl",
+        fa: "rtl", // just add locales with `rtl` direction
       },
     });
   } catch (e) {

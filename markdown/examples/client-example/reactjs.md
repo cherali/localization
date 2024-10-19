@@ -113,8 +113,7 @@ localization.init({
   locales: localizationConfig.locales,
   defaultLocale: localizationConfig.defaultLocale,
   textDirection: {
-    en: "ltr",
-    fa: "rtl",
+    fa: "rtl", // just add locales with `rtl` direction
   },
   enablePartition: true,
   capitalizePartitionName: true,
