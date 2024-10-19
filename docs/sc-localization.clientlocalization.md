@@ -110,7 +110,7 @@ return localization locale
 
 </td><td>
 
-"rtl" \| "ltr" \| undefined
+[Directions](./sc-localization.directions.md)
 
 
 </td><td>

@@ -4,10 +4,24 @@
 
 ## LocalizationOptions.textDirection property
 
-text direction for each locale
+text direction for locales
+
+you just need to set the locale that have a different text direction than `defaultTextDirection` (which is `ltr` by default)
+
+if `defaultTextDirection` is not set, any locale that is `NOT` in this object will have `ltr` text direction, so you just need to define `rtl` locales in this object
+
+if `defaultTextDirection` is set to `rtl`<!-- -->, any locale that is `NOT` in this object will have `rtl` text direction, so you just need to define `ltr` locales in this object
+
+setting `defaultTextDirection` is to `ltr` is NOT useful, and if you have lots of `ltr` text direction you can remove this, by setting this to `ltr` you need to define all locales that have `rtl` text direction
+
+also you can set all locales with text direction but you don't need to do this
+
+so, if you have lots of `ltr` text direction locales, just set define the locales that have `rtl` text direction in this object if you have lots of `rtl` text direction locales, first set `defaultTextDirection` to `rtl`<!-- -->, then define the locales that have `ltr` text direction in this object
+
+the `localeDirection` getter first use this object for returning the text direction, thus if you set `en` to `rtl` in this object, localeDirection will return `rtl`
 
 **Signature:**
 
 ```typescript
-readonly textDirection: Record<T, "rtl" | "ltr">;
+readonly textDirection?: TextDirectionObject<T>;
 ```

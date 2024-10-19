@@ -1,6 +1,6 @@
 import path from "path";
 import { readFileSync, readdirSync } from "fs";
-import { ITranslation, LocalizationOptions, NestedObject } from "../../types/localization";
+import { ITranslation, LocalizationOptions, NestedObject, Directions } from "../../types/localization";
 import { capitalize } from "../../utils/string";
 import { uniquePrimitiveArray } from "../../utils/array";
 
@@ -86,8 +86,9 @@ class ServerLocalization {
    * get locale text direction
    * @public
    */
-  static get localeDirection() {
-    return this.#options.textDirection[this.#getLocale()];
+  static get localeDirection(): Directions {
+    const direction = this.#options.textDirection?.[this.#getLocale()];
+    return direction ?? this.#options.defaultTextDirection ?? "ltr";
   }
 
   /**

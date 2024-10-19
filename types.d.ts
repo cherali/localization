@@ -1,1 +1,1 @@
-export type { ITranslation, LocalizationOptions, NestedObject } from "./dist/sc-localization";
+export type { ITranslation, LocalizationOptions, NestedObject, Directions } from "./dist/sc-localization";

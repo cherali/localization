@@ -88,6 +88,17 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[Directions](./sc-localization.directions.md)
+
+
+</td><td>
+
+all available directions, which is `ltr` or `rtl`
+
+
+</td></tr>
+<tr><td>
+
 [ITranslation](./sc-localization.itranslation.md)
 
 
@@ -107,6 +118,19 @@ this is return type of `get` methods
 </td><td>
 
 the abstract representation of translation object, which key is string and value can be string or object
+
+
+</td></tr>
+<tr><td>
+
+[TextDirectionObject](./sc-localization.textdirectionobject.md)
+
+
+</td><td>
+
+type of text direction object in init function
+
+just a record (object) with locales as key (optional), and `rtl` or 'ltr' as value
 
 
 </td></tr>

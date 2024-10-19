@@ -1,7 +1,7 @@
 import { capitalize, unCapitalize } from "../../utils/string.ts";
 import { uniquePrimitiveArray } from "../../utils/array.ts";
 import { delay } from "../../utils/promise.ts";
-import type { ITranslation, LocalizationOptions, NestedObject } from "../../types/localization.ts";
+import type { ITranslation, LocalizationOptions, NestedObject, Directions } from "../../types/localization.ts";
 
 /**
  * if you using CSR, use this class to add localization to your app.
@@ -100,8 +100,9 @@ class ClientLocalization {
    * get locale text direction
    * @public
    */
-  static get localeDirection() {
-    return this.#options.textDirection[this.#locale];
+  static get localeDirection(): Directions {
+    const direction = this.#options.textDirection?.[this.#locale];
+    return direction ?? this.#options.defaultTextDirection ?? "ltr";
   }
 
   /**

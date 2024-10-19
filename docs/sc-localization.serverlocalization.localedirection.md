@@ -9,5 +9,5 @@ get locale text direction
 **Signature:**
 
 ```typescript
-static get localeDirection(): "rtl" | "ltr" | undefined;
+static get localeDirection(): Directions;
 ```

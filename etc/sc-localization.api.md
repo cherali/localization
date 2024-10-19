@@ -10,10 +10,13 @@ export class ClientLocalization {
     static get<K extends keyof Localization>(parts: K[]): Promise<ITranslation<K>>;
     static init<T extends string>(options: LocalizationOptions<T>): void;
     static get locale(): Locales[number];
-    static get localeDirection(): "rtl" | "ltr" | undefined;
+    static get localeDirection(): Directions;
     static onMismatchLocale(locale: string | undefined, callback: (defaultLocale: string) => void): void;
     static setLocale(locale: string | undefined): void;
 }
+
+// @public
+export type Directions = "rtl" | "ltr";
 
 // @public
 export type ITranslation<T extends keyof Localization> = {
@@ -24,10 +27,11 @@ export type ITranslation<T extends keyof Localization> = {
 export interface LocalizationOptions<T extends string> {
     readonly capitalizePartitionName?: boolean;
     readonly defaultLocale: T;
+    readonly defaultTextDirection?: Directions;
     readonly enablePartition?: boolean;
     readonly locales: Array<T>;
     readonly path: string;
-    readonly textDirection: Record<T, "rtl" | "ltr">;
+    readonly textDirection?: TextDirectionObject<T>;
 }
 
 // @public
@@ -41,10 +45,15 @@ export class ServerLocalization {
     static get<K extends keyof Localization>(parts?: K[]): Localization | ITranslation<K>;
     static init<T extends string>(options: LocalizationOptions<T>): void;
     static get locale(): Locales[number];
-    static get localeDirection(): "rtl" | "ltr" | undefined;
+    static get localeDirection(): Directions;
     static onMismatchLocale(locale: string | undefined, callback: (defaultLocale: string) => void): void;
     static setLocale(handler: () => string): void;
 }
+
+// @public
+export type TextDirectionObject<T extends string> = {
+    [K in T]?: Directions;
+};
 
 // (No @packageDocumentation comment for this package)
 
