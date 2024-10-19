@@ -44,6 +44,26 @@ It's depends on whether you want to use server or client localization, for more 
 
 If you using typescript, and your IDE supports `intelliSense` you can add your localization type, this helps you avoid mis-spelling words and easy access (less copy/paste) to nested translation when you press `.`, cool! hah?! ([more info](./markdown/add-type-support.md)).
 
+## Installation
+
+- Using npm:
+
+```bash
+npm i sc-localization
+```
+
+- Using yarn
+
+```bash
+yarn add sc-localization
+```
+
+- Using pnpm
+
+```bash
+pnpm i sc-localization
+```
+
 ## Documentation
 
 - [Full Documentation](./docs/index.md)
