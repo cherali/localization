@@ -30,14 +30,15 @@
   },
   "files": [
     "dist",
+    "types.d.ts",
     "server.d.ts",
     "client.d.ts"
   ],
   "sideEffects": false,
-  "types": "./dist/sc-localization.d.ts",
+  "types": "./types.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/sc-localization.d.ts"
+      "types": "./types.d.ts"
     },
     "./server": {
       "import": "./dist/es/server.js",
