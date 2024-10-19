@@ -12,7 +12,6 @@ describe("Test for `providers:server`", () => {
       locales: ["fa", "en"],
       defaultLocale: "fa",
       textDirection: {
-        en: "ltr",
         fa: "rtl",
       },
       capitalizePartitionName: true,

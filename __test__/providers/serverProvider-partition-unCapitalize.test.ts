@@ -6,24 +6,16 @@ describe("Test for `providers:server`", () => {
     expect(() => new localization()).toThrow();
   });
 
-  describe("Test for functionality `without` partition", () => {
+  describe("Test for functionality `with` partition, unCapitalize", () => {
     localization.init({
       path: "/__test__/locales",
       locales: ["fa", "en"],
       defaultLocale: "en",
-      textDirection: {
-        fa: "rtl",
-      },
+      enablePartition: true,
     });
 
     test("call before pass handler to set locale", () => {
-      expect(localization.locale).toBe("en");
-    });
-
-    localization.setLocale(() => "en");
-
-    test("get: with empty array", () => {
-      expect(() => localization.get([])).toThrow();
+      expect(localization.localeDirection).toBe("ltr");
     });
 
     test("call fn on mismatch", async () => {
@@ -34,15 +26,17 @@ describe("Test for `providers:server`", () => {
     });
 
     test("get: return all translation", async () => {
+      localization.setLocale(() => "en");
+
       const trx = await localization.get();
-      expect(Object.keys(trx)).toStrictEqual(["Home", "About"]);
-      expect(trx.Home.home).toBe("H O M E");
+      expect(Object.keys(trx)).toStrictEqual(["about", "home"]);
+      expect(trx.home.home).toBe("H O M E");
     });
 
     test("get: return Home translation", async () => {
-      const trx = await localization.get(["Home"]);
-      expect(Object.keys(trx)).toStrictEqual(["Home"]);
-      expect(trx.Home.home).toBe("H O M E");
+      const trx = await localization.get(["home"]);
+      expect(Object.keys(trx)).toStrictEqual(["home"]);
+      expect(trx.home.home).toBe("H O M E");
     });
 
     test("get current locale", () => {

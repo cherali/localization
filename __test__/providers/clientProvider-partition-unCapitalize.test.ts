@@ -4,18 +4,12 @@ import { localization } from "../../src/providers/client";
 global.fetch = vi.fn();
 
 describe("Test for `providers:client`", () => {
-  test("Create new instance of localization must throw error", () => {
-    expect(() => new localization()).toThrow();
-  });
-
-  describe("Test for functionality `without` partition", () => {
+  describe("Test for functionality `with` partition, unCapitalize", () => {
     localization.init({
       path: "/__test__/locales",
       locales: ["fa", "en"],
       defaultLocale: "en",
-      textDirection: {
-        fa: "rtl",
-      },
+      enablePartition: true,
     });
 
     localization.setLocale("en");
@@ -43,15 +37,13 @@ describe("Test for `providers:client`", () => {
       (global.fetch as any).mockResolvedValueOnce({
         ok: true,
         json: async () => ({
-          Home: {
-            home: "H O M E",
-          },
+          home: "H O M E",
         }),
       });
 
-      const trx = await localization.get(["Home"]);
-      expect(Object.keys(trx)).toStrictEqual(["Home"]);
-      expect(trx.Home.home).toBe("H O M E");
+      const trx = await localization.get(["home"]);
+      expect(Object.keys(trx)).toStrictEqual(["home"]);
+      expect(trx.home.home).toBe("H O M E");
     });
 
     test("get current locale", () => {
@@ -62,13 +54,13 @@ describe("Test for `providers:client`", () => {
       expect(localization.localeDirection).toBe("ltr");
     });
 
-    test("get: request a part that doesn't exist", async () => {
+    test("get: request a partition that doesn't exist", async () => {
       (global.fetch as any).mockResolvedValueOnce({
         ok: false,
         json: async () => ({}),
       });
 
-      const trx = await localization.get(["Common"]);
+      const trx = await localization.get(["common"]);
 
       expect(Object.keys(trx)).toStrictEqual([]);
     });

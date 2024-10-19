@@ -8,10 +8,10 @@ describe("Test for `providers:client`", () => {
     localization.init({
       path: "/__test__/locales",
       locales: ["fa", "en"],
-      defaultLocale: "en",
+      defaultLocale: "fa",
+      defaultTextDirection: "rtl",
       textDirection: {
         en: "ltr",
-        fa: "rtl",
       },
       capitalizePartitionName: true,
       enablePartition: true,
@@ -27,11 +27,11 @@ describe("Test for `providers:client`", () => {
     });
 
     test("set locale with undefined: must set defaultLocale", async () => {
-      localization.setLocale("fa");
+      localization.setLocale("en");
 
       localization.setLocale(undefined);
 
-      expect(localization.locale).toBe("en");
+      expect(localization.locale).toBe("fa");
     });
 
     test("get: with empty array", async () => {
@@ -48,14 +48,54 @@ describe("Test for `providers:client`", () => {
 
       const trx = await localization.get(["Home"]);
       expect(Object.keys(trx)).toStrictEqual(["Home"]);
+      expect(trx.Home.home).toBe("H O M E");
     });
 
     test("get current locale", () => {
-      expect(localization.locale).toBe("en");
+      expect(localization.locale).toBe("fa");
     });
 
     test("get locale direction", () => {
-      expect(localization.localeDirection).toBe("ltr");
+      expect(localization.localeDirection).toBe("rtl");
+    });
+
+    test("get: request a partition that doesn't exist", async () => {
+      (global.fetch as any).mockResolvedValueOnce({
+        ok: false,
+        json: async () => ({}),
+      });
+
+      const trx = await localization.get(["Common"]);
+
+      expect(Object.keys(trx)).toStrictEqual([]);
+    });
+
+    test("get: request a partition that takes time", async () => {
+      (global.fetch as any)
+        .mockImplementationOnce(() => {
+          return new Promise(resolve => {
+            setTimeout(() => {
+              resolve({
+                json: () => Promise.resolve({}),
+              });
+            }, 500);
+          });
+        })
+        .mockImplementationOnce(() => {
+          return new Promise(resolve => {
+            setTimeout(() => {
+              resolve({
+                json: () => Promise.resolve({}),
+              });
+            }, 500);
+          });
+        });
+
+      const trx = await localization.get(["Home"]);
+      const trx2 = await localization.get(["Home"]);
+
+      expect(Object.keys(trx)).toStrictEqual(["Home"]);
+      expect(Object.keys(trx2)).toStrictEqual(["Home"]);
     });
   });
 });
