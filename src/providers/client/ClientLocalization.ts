@@ -148,8 +148,11 @@ class ClientLocalization {
   }
 
   static async #fetchTranslation(path: string, loadingKey: string) {
+    const url = this.#options.v ? `${path}?v=${this.#options.v}` : path;
+
     this.#setLoading(loadingKey, true);
-    return await fetch(path).then(res => {
+
+    return await fetch(url).then(res => {
       this.#setLoading(loadingKey, false);
       // if success return response
       if (res.ok) {

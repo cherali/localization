@@ -208,4 +208,31 @@ the `localeDirection` getter first use this object for returning the text direct
 
 
 </td></tr>
+<tr><td>
+
+[v?](./sc-localization.localizationoptions.v.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+string \| number
+
+
+</td><td>
+
+_(Optional)_ first of all, this is a client thing only, and only works for client localization.
+
+because client localization use fetch to get translation, and browsers cache the responses, on each build you may change the translation file (add, remove), so you need a way to invalidate the cache, to do that, you can use this property.
+
+you can pass any unique number or string like timestamp, or your app version, this property will be added as a query parameter to the fetch url.
+
+if you set this to undefined or you don't set this, the url will be cleaned of any query parameter even question mark, in the case you want to handle cache by yourself, you can remove this flag in options.
+
+
+</td></tr>
 </tbody></table>

@@ -32,6 +32,7 @@ export interface LocalizationOptions<T extends string> {
     readonly locales: readonly T[];
     readonly path: string;
     readonly textDirection?: TextDirectionObject<T>;
+    readonly v?: string | number;
 }
 
 // @public
