@@ -35,11 +35,7 @@
     "client.d.ts"
   ],
   "sideEffects": false,
-  "types": "./types.d.ts",
   "exports": {
-    ".": {
-      "types": "./types.d.ts"
-    },
     "./server": {
       "import": "./dist/es/server.js",
       "require": "./dist/cjs/server.cjs",
