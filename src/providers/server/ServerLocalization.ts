@@ -1,4 +1,4 @@
-import path from "path";
+import * as path from "path";
 import { readFileSync, readdirSync } from "fs";
 import { ITranslation, LocalizationOptions, NestedObject, Directions } from "../../types/localization";
 import { capitalize } from "../../utils/string";
