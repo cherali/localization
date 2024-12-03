@@ -155,8 +155,8 @@ class ClientLocalization {
       if (res.ok) {
         return res.json();
       }
-      // return false if failed
-      return false;
+      // return undefined if failed
+      return undefined;
     });
   }
 
