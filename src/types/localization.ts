@@ -11,7 +11,7 @@ export interface LocalizationOptions<T extends string> {
   /**
    * list of supported locales, all reads and fetches uses this locale array
    */
-  readonly locales: Array<T>;
+  readonly locales: readonly T[];
 
   /**
    * default locale, this must be one of items in locales array

@@ -99,7 +99,11 @@ class ServerLocalization {
     return this.#getLocale() as Locales[number];
   }
 
-  static #readTranslationWithPartition(locales: string[], dirPath: string, capitalizePartitionName: boolean = false) {
+  static #readTranslationWithPartition(
+    locales: readonly string[],
+    dirPath: string,
+    capitalizePartitionName: boolean = false,
+  ) {
     const folders = readdirSync(process.cwd() + dirPath, { withFileTypes: true })
       .filter(f => f.isDirectory())
       .map(f => f.name);
@@ -117,7 +121,7 @@ class ServerLocalization {
     });
   }
 
-  static #readTranslationWithoutPartition(locales: string[], path: string) {
+  static #readTranslationWithoutPartition(locales: readonly string[], path: string) {
     locales.forEach(locale => {
       const file = this.#readSingleFile(this.#joinPaths(path, `${locale}.json`));
 

@@ -29,7 +29,7 @@ export interface LocalizationOptions<T extends string> {
     readonly defaultLocale: T;
     readonly defaultTextDirection?: Directions;
     readonly enablePartition?: boolean;
-    readonly locales: Array<T>;
+    readonly locales: readonly T[];
     readonly path: string;
     readonly textDirection?: TextDirectionObject<T>;
 }

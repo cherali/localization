@@ -9,5 +9,5 @@ list of supported locales, all reads and fetches uses this locale array
 **Signature:**
 
 ```typescript
-readonly locales: Array<T>;
+readonly locales: readonly T[];
 ```

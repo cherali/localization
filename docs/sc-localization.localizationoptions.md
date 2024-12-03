@@ -143,7 +143,7 @@ if you want separate your translation set this to true
 
 </td><td>
 
-Array&lt;T&gt;
+readonly T\[\]
 
 
 </td><td>
