@@ -72,13 +72,13 @@ And done! <br>
 - ***Make sure the init function calls only `once` per app, `important` for `server` localization, and not really useful for `client` localization.***
 - *Make sure you define the correct path for localization.*
 - If you are using a framework you may need to adjust navigation links and some methods.
-
+- You can use some tools or commands to remove spaces and break-lines from original translations files and put output in public folder to save bytes!
 
 ## Implementation Examples
-A quick solution to work with this package is if you have problem using this package.
+A quick solution to work with this package is if you have problem using this package (use `tailwindcss` for some styling).
 
 + Server Localization
-  - [Next.js](./server-example/nextjs.md)
+  - [Next.js (App Directory)](./server-example/nextjs.md)
 
 + Client Localization
   - [React.js](./client-example/reactjs.md)

@@ -4,7 +4,7 @@ There are two strategies that you can choose for managing the translation files:
 - `ST2`: Separate files, based on partition, you must set `enablePartition` flag to `true` when calling `init` function
 <br>
 
-**First of all, you need to create a folder for your translation files in your `public directory`, you can name it anything that you want, but for now let's call it `locales` (actually if you are using server localization you can create this `locales` anywhere you want but for client localization, this must be in the public folder).**
+**First of all, you need to create a folder for your translation files in your `public directory`, you can name it anything that you want, but for now let's call it `locales` (actually if you are using server localization you can create this `locales` anywhere you want but for client localization, this must be in the public folder, but you can use some tools or commands to remove spaces and break-lines from original translations files and put output in public folder to save bytes).**
 
 <br>
 

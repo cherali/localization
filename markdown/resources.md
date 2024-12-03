@@ -51,6 +51,8 @@ Cost of returning translation is `1` (some ifs, some loops, and object creation 
 
 The cost of fetch depends on whether you set `enablePartition` to true or not, and the size of the translation files, by setting `enablePartition` to true, `get` only fetches the required partition so this reduces the latency costs and requires less byte to transfer so `get` function resolves faster. <br>
 
+You can use some tools or commands to remove spaces and break-lines from original translations files and put output in public folder to save bytes!<br>
+
 
 Summary:
 - Calling `init`: Just save options // constant time
@@ -76,6 +78,8 @@ Thus
 
 
 *for client localization, `get` only downloads the partition/translation that the page requires and as the user navigates more in the app it fetches more and more, so memory usage grows.* <br>
+
+***No one really can say that the exact amount of memory consumes by this package, because it's depends on various situation, even the language you want to add may affect the size, also if you set `enablePartition` to true the file itself add more bytes to memory! if the memory consumption is really important to you you need to measure it by yourself.***
 
 
 ### Notes

@@ -29,12 +29,14 @@ For about:
 ```
 
 
-*Change the key and content as you see fit.*
+*Change the key and content as you see fit.* <br>
+
+*You can use some tools or commands to remove spaces and break-lines from original translations files and put output in public folder to save bytes!*
 
 - Step 1.X: create config file in `src/constants/config.ts` and put this code into it:
 
 ```ts
-import type { LocalizationOptions } from "sc-localization";
+import type { LocalizationOptions } from "sc-localization/client";
 const locales = ["en", "fr"] as const;
 
 type LocalesType = (typeof locales)[number];
@@ -43,7 +45,7 @@ interface LocalizationConfig extends Pick<LocalizationOptions<LocalesType>, "loc
 }
 
 export const localizationConfig: LocalizationConfig = {
-  locales: [...locales],
+  locales,
   defaultLocale: "en", // default locale
 };
 ```
@@ -117,6 +119,7 @@ localization.init({
   },
   enablePartition: true,
   capitalizePartitionName: true,
+  v: "1.0.0" // for browsers caching...
 });
 
 export function TranslationProvider() {
@@ -140,8 +143,7 @@ In `src/hooks/useLocalization.ts`
 ```ts
 import { useEffect, useState } from "react";
 import { useLocaleStore } from "../store/localizationStore";
-import type { ITranslation } from "sc-localization";
-import { localization } from "sc-localization/client";
+import { localization, type ITranslation } from "sc-localization/client";
 
 export function useTranslation<T extends keyof Localization>(parts: T[]) {
   const [translations, setTranslations] = useState({});
@@ -235,7 +237,7 @@ in .render function:
 
 ```tsx
 <Fragment>
-  <TranslationProvider />
+  <TranslationProvider /> // this is not a real provider, you can see the auto-closing tag!
   <App />
 </Fragment>
 ```
@@ -259,3 +261,4 @@ function Test() {
 - *This example uses a share state (with zustand) to show translation, but you should adjust your routing system to manage localization (also you can use cookies too).*
 - *You need to change some functionality and components to adjust this localization with your routing system.*
 - *You can change lang and dir of page when changing the locale.*
+- You can use some tools or commands to remove spaces and break-lines from original translations files and put output in public folder to save bytes!

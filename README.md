@@ -36,13 +36,17 @@ Supports both server and client localization.
 
 This package only reads/fetches translations and gives them to you, for the rest of the functionality you are responsible for implementing it, this gives you a high level of customization but requires more time to implement also adding a feature, for example, if you want to calculate a value and put it into text translation you need to do it by yourself, although for this situation you can do it by reading [this page](./markdown/dynamic-text.md), but this was just an example.
 
-## How It's Work?
+## How It Works?
 
 It's depends on whether you want to use server or client localization, for more info [Check this link](./markdown/how-works.md)
 
 ## Supporting Type
 
 If you using typescript, and your IDE supports `intelliSense` you can add your localization type, this helps you avoid mis-spelling words and easy access (less copy/paste) to nested translation when you press `.`, cool! hah?! ([more info](./markdown/add-type-support.md)).
+
+## Important Notes
+
+- For making this package as fast as possible, some errors deliberately not handled! the most common errors happen when somehow the `init` method not initialize correctly, if you encounter with some errors make sure this method called correctly.
 
 ## Installation
 
@@ -73,3 +77,5 @@ pnpm i sc-localization
 - [Dynamic Texts](./markdown/dynamic-text.md)
 - [Add Type Support](./markdown/add-type-support.md)
 - [Example](./markdown/examples/example.md)
+- [CHANGELOG](./CHANGELOG.MD)
+- [Migration](./markdown/migration/migration.md)

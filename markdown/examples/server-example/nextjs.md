@@ -1,4 +1,4 @@
-# Implementation for `Next.js`
+# Implementation for `Next.js` - App Directory
 This is just an example of how you can use this with Next.js and Typescript.<br>
 You can modify it however you want.
 
@@ -25,7 +25,7 @@ In public/locales create
 - Step 1.X: create config file in `src/constants/config.ts` and put this code into it:
 
 ```ts
-import type { LocalizationOptions } from "sc-localization";
+import type { LocalizationOptions } from "sc-localization/server";
 const locales = ["en", "fr"] as const;
 
 type LocalesType = (typeof locales)[number];
@@ -35,7 +35,7 @@ interface LocalizationConfig extends Pick<LocalizationOptions<LocalesType>, "loc
 }
 
 export const localizationConfig: LocalizationConfig = {
-  locales: [...locales],
+  locales,
   defaultLocale: "en", // default locale
   cookieLanguageKey: "lang", // cookie key name
 };
@@ -205,9 +205,11 @@ You need one more step to make this work which is to provide a method for the us
 
 ```tsx
 "use client";
-import React from "react";
-import { changeLocale } from "../../actions/localization";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { changeLocale } from "../../actions/localization";
+import { getLocaleMatcher } from "../../utils/string";
+import { localizationConfig } from "../../constants/config";
 
 function LocaleSelection() {
   const pathname = usePathname();
@@ -215,6 +217,30 @@ function LocaleSelection() {
   const handleChangeLocale = (locale: string) => () => {
     changeLocale(locale, pathname);
   };
+
+
+    // this function handle the backward and forward navigation caused by browser button
+  useEffect(() => {
+    //  the the locale matcher
+    const match = getLocaleMatcher(pathname);
+
+    // if match set the locale if browser url locale is different from match
+    if (match) {
+      // this extra if prevents changing locale each time when user navigates between pages
+      if (locale != match[1]) {
+        // change locale
+        handleChangeLocale(match[1])();
+      }
+    }
+    // if match not found, user probably setting default locale
+    else {
+      // this extra if prevents changing locale each time when user navigates between pages
+      if (locale != localizationConfig.defaultLocale) {
+        // set default locale
+        handleChangeLocale(localizationConfig.defaultLocale)();
+      }
+    }
+  }, [pathname]);
 
   return (
     <div className="flex gap-4 flex-col *:text-blue-800">
@@ -253,10 +279,59 @@ export async function changeLocale(locale: string, pathname: string) {
   redirect(redirectUrl);
 }
 ```
+<br>
+
+You need to use custom `link` component, so in `src/components/LinkTo.tsx` add this
+
+```tsx
+/**
+ * this component used route between pages, and include locale in navigation
+ * this component is just line Link in nextjs, and only add locale
+ * this component created so you don't need to add locale to every link
+ */
+import type { ReactNode } from "react";
+import Link, { LinkProps } from "next/link";
+import { localization } from "sc-localization/server";
+import { localizationConfig } from "../../constants/config";
+
+interface LinkToProps extends LinkProps {
+  href: string;
+  children: ReactNode;
+}
+
+/**
+ * this function calculate linkTo
+ * just get target url and add locale
+ * note that this created by considering that the default locale will be striped out from url
+ * if you have different strategy for default locale, you may need to change this function
+ */
+function getLinkTo(href: string) {
+  let to = "";
+
+  // if locale is not default locale, add locale to url
+  if (localization.locale != localizationConfig.defaultLocale) {
+    to = `/${localization.locale}`;
+  }
+
+  return to + href;
+}
+
+function LinkTo({ children, href, ...props }: LinkToProps) {
+  const linkTo = getLinkTo(href);
+  return (
+    <Link href={linkTo} {...props}>
+      {children}
+    </Link>
+  );
+}
+
+export default LinkTo;
+```
+*this is a server thing, so no need to add `use client`*
+
+<br>
 
 *Now, let's check the middleware.*
-
-<hr>
 
 ## Middleware
 I use middleware to achieve some behaviors like:
