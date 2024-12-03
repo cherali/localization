@@ -4,7 +4,7 @@
 
 ## LocalizationOptions.locales property
 
-list of supported locales, all reads and fetch's uses this locale array
+list of supported locales, all reads and fetches uses this locale array
 
 **Signature:**
 

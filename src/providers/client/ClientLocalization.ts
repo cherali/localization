@@ -6,7 +6,7 @@ import type { ITranslation, LocalizationOptions, NestedObject, Directions } from
 /**
  * if you using CSR, use this class to add localization to your app.
  *
- * this use fetch to retrieve json files form server, when you calls get and the file doesn't exist
+ * this use fetch to retrieve json files form server, when you call get and the file doesn't exist
  *
  * recommend to set `enablePartition` and `capitalizePartitionName` to true
  * @public
@@ -37,11 +37,8 @@ class ClientLocalization {
 
   /**
    * use to access the translations
-   * @param parts - list of parts/partition in your translation, or undefined
-   * @returns
-   * - if calls with `no params`: returns existing translations base on locale.
-   *
-   * - if calls with `array of string`: if part exist get it from translation object then returns it, if not fetch the translation
+   * @param parts - list of parts/partition in your translation
+   * @returns if part exist, get it from translation object then returns it, if not, fetches and return the translation
    *
    * @public
    */
@@ -54,7 +51,7 @@ class ClientLocalization {
     if (this.#options.enablePartition) {
       await this.#fetchTranslationWithPartition(parts);
 
-      // map through parts to identify which one is is fetching
+      // map through parts to identify which one is fetching
       loadings = parts.map(part => {
         const key = this.#getLoadingKeyWithPartition(this.#getPartName(part));
         return this.#loadingPromises[key]!;

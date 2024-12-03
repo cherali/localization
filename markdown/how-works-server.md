@@ -10,7 +10,7 @@ After importing localization, this class gives you 4 important static methods: (
 
 ## `init` function
 This function based on the options ([see options](../docs/sc-localization.localizationoptions.md)) you provide as an argument tries to read the locale files (using `fs` and `path`), and stores those into an object (for how to define translation files [read this](./define-translation.md)). <br>
-When you using server localization you must make sure this function calls once per app, also make sure this function `NOT` calls for each request ([read resource usage](./resources.md)).<br>
+When you are using server localization you must make sure this function calls once per app, also make sure this function `NOT` calls for each request ([read resource usage](./resources.md)).<br>
 
 
 ## `setLocale` function
@@ -97,7 +97,7 @@ console.log(trx2.Common) // logs undefined, you didn't request it when calling `
 ```
 
 
-- **If your IDE supports intelliSense and you already override `Localization` type/interface, the IDE gives you some suggestions as you type.** [how to add type support](./add-type-support.md)
+- **If your IDE supports intelliSense, and you already override `Localization` type/interface, the IDE gives you some suggestions as you type.** [how to add type support](./add-type-support.md)
 
 - You can use `onMismatchLocale` method to redirect to defaultLocale if locale is not valid.
 
@@ -105,4 +105,4 @@ console.log(trx2.Common) // logs undefined, you didn't request it when calling `
 
 <br>
 
-What happen if need dynamic texts??? (replace placeholder with value in text) [Read this](./dynamic-text.md)
+What happen if you need dynamic texts??? (replace placeholder with value in text) [Read this](./dynamic-text.md)

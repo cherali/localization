@@ -42,6 +42,8 @@ handler
 
 </td><td>
 
+the handler which retrieve the locale
+
 
 </td></tr>
 </tbody></table>

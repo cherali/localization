@@ -6,7 +6,7 @@
 
 if you want render files on server and send rendered page to client use this class.
 
-this uses fs and path to read all files and you can access translation by using `get`<!-- -->.
+this uses fs and path to read all files, and you can access translation by using `get`<!-- -->.
 
 **Signature:**
 

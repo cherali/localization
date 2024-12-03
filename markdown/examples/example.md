@@ -71,7 +71,7 @@ And done! <br>
 ## Notes
 - ***Make sure the init function calls only `once` per app, `important` for `server` localization, and not really useful for `client` localization.***
 - *Make sure you define the correct path for localization.*
-- If you using a framework you may need to adjust navigation links and some methods.
+- If you are using a framework you may need to adjust navigation links and some methods.
 
 
 ## Implementation Examples

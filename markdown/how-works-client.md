@@ -24,7 +24,7 @@ This function fetches only requires the locale/partition that you need to show t
 Later on component, you use this function to `fetch/access` the translation texts. <br>
 This function uses the value that `setLocale` stores in the localization class. <br> <br>
 
-*If multiple get calls for a partition/translation which is not exist only on fetch request triggers, and the `get` awaits for that to be handle in future.*
+*If multiple get calls for a partition/translation which is not exist only on fetch request triggers, and the `get` awaits for that will be handled in the future.*
 
 
 ## `onMismatchLocale` function
@@ -83,7 +83,7 @@ console.log(trx2.Common) // logs undefined, you didn't request it when calling `
 
 - ***If you set `enablePartition` to `true` the `get` function fetches partitions piece by piece as the app needs those, resulting in fewer bytes being downloaded, thus performance improves! [more info](/markdown/resources.md#notes)***
 
-- **If your IDE supports intelliSense and you already override `Localization` type/interface, the IDE gives you some suggestions as you type.** [how to add type support](./add-type-support.md)
+- **If your IDE supports intelliSense, and you already override `Localization` type/interface, the IDE gives you some suggestions as you type.** [how to add type support](./add-type-support.md)
 
 - You can use `onMismatchLocale` method to redirect to defaultLocale if locale is not valid.
 
@@ -94,7 +94,7 @@ console.log(trx2.Common) // logs undefined, you didn't request it when calling `
 
 <br>
 
-What happen if need dynamic texts??? (replace placeholder with value in text) [Read this](./dynamic-text.md)
+What happen if you need dynamic texts??? (replace placeholder with value in text) [Read this](./dynamic-text.md)
 
 <hr>
 

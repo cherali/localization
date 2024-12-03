@@ -40,8 +40,8 @@ declare global {
 
 
 - *If you set `enablePartition` to true, sorry to say that, but you have to add the relevant types manually*
-- *This file is a `.d.ts` (declaration) file, and doesn't matter how many imports you have here, this is just a development thing and doesn't effect the production bundle*
-- *Adding one translation will add the type support, but it's better to add all translation files, because sometimes you might forget to add a new translation to all your translation files, by adding all files, the new text doesn't show up in the suggestion list and you can fix it in the earlier stage of your task.*
+- *This file is a `.d.ts` (declaration) file, and doesn't matter how many imports you have here, this is just a development thing and doesn't affect the production bundle*
+- *Adding one translation will add the type support, but it's better to add all translation files, because sometimes you might forget to add a new translation to all your translation files, by adding all files, the new text doesn't show up in the suggestion list, and you can fix it in the earlier stage of your task.*
 - *You can define your localization config somewhere and use it for overriding the `Locales type` (which you can see in [example](./examples/example.md#implementation-examples) section).*
 
 <br>

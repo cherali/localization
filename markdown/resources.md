@@ -54,7 +54,7 @@ The cost of fetch depends on whether you set `enablePartition` to true or not, a
 
 Summary:
 - Calling `init`: Just save options // constant time
-- Calling `get`: It depends on the server to send translation files, the client connection latency, the client network speed, and the size of the file you want to transfer.. // it's an async function and can't really say.
+- Calling `get`: It depends on the server to send translation files, the client connection latency, the client network speed, and the size of the file you want to transfer... // it's an async function and can't really say.
 
 
 

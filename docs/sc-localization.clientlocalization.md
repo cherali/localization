@@ -6,7 +6,7 @@
 
 if you using CSR, use this class to add localization to your app.
 
-this use fetch to retrieve json files form server, when you calls get and the file doesn't exist
+this use fetch to retrieve json files form server, when you call get and the file doesn't exist
 
 recommend to set `enablePartition` and `capitalizePartitionName` to true
 

@@ -148,7 +148,7 @@ Array&lt;T&gt;
 
 </td><td>
 
-list of supported locales, all reads and fetch's uses this locale array
+list of supported locales, all reads and fetches uses this locale array
 
 
 </td></tr>
@@ -200,7 +200,7 @@ if `defaultTextDirection` is set to `rtl`<!-- -->, any locale that is `NOT` in t
 
 setting `defaultTextDirection` is to `ltr` is NOT useful, and if you have lots of `ltr` text direction you can remove this, by setting this to `ltr` you need to define all locales that have `rtl` text direction
 
-also you can set all locales with text direction but you don't need to do this
+also you can set all locales with text direction, but you don't need to do this
 
 so, if you have lots of `ltr` text direction locales, just set define the locales that have `rtl` text direction in this object if you have lots of `rtl` text direction locales, first set `defaultTextDirection` to `rtl`<!-- -->, then define the locales that have `ltr` text direction in this object
 

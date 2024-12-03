@@ -42,7 +42,7 @@ K\[\]
 
 </td><td>
 
-list of parts/partition in your translation, or undefined
+list of parts/partition in your translation
 
 
 </td></tr>
@@ -51,7 +51,5 @@ list of parts/partition in your translation, or undefined
 
 Promise&lt;[ITranslation](./sc-localization.itranslation.md)<!-- -->&lt;K&gt;&gt;
 
-- if calls with `no params`<!-- -->: returns existing translations base on locale.
-
-- if calls with `array of string`<!-- -->: if part exist get it from translation object then returns it, if not fetch the translation
+if part exist, get it from translation object then returns it, if not, fetches and return the translation
 

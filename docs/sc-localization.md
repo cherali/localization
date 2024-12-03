@@ -26,7 +26,7 @@ Description
 
 if you using CSR, use this class to add localization to your app.
 
-this use fetch to retrieve json files form server, when you calls get and the file doesn't exist
+this use fetch to retrieve json files form server, when you call get and the file doesn't exist
 
 recommend to set `enablePartition` and `capitalizePartitionName` to true
 
@@ -41,7 +41,7 @@ recommend to set `enablePartition` and `capitalizePartitionName` to true
 
 if you want render files on server and send rendered page to client use this class.
 
-this uses fs and path to read all files and you can access translation by using `get`<!-- -->.
+this uses fs and path to read all files, and you can access translation by using `get`<!-- -->.
 
 
 </td></tr>

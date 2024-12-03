@@ -237,7 +237,7 @@ in .render function:
 <Fragment>
   <TranslationProvider />
   <App />
-</Fragment>,
+</Fragment>
 ```
 
 - Step 6: call `get`<br>

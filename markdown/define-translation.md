@@ -4,7 +4,7 @@ There are two strategies that you can choose for managing the translation files:
 - `ST2`: Separate files, based on partition, you must set `enablePartition` flag to `true` when calling `init` function
 <br>
 
-**First of all, you need to create a folder for your translation files in your `public directory`, you can name it anything that you want, but for now let's call it `locales` (actually if you using server localization you can create this `locales` anywhere you want but for client localization, this must be in the public folder).**
+**First of all, you need to create a folder for your translation files in your `public directory`, you can name it anything that you want, but for now let's call it `locales` (actually if you are using server localization you can create this `locales` anywhere you want but for client localization, this must be in the public folder).**
 
 <br>
 
@@ -43,13 +43,13 @@ And add your translation text to relevant file. <br>
 ## Call `init` with options
 Now, let's configure init function, and there is 4 property required to set. ([more info](../docs/sc-localization.localizationoptions.md))
 - `path`: the path which your locales exist, which is `/public/locales`.
-- `locales`: list of locales, which is ['en','de'].
-- `defaultLocale`: one of property in locales array,.
+- `locales`: list of locales, which is ["en", "fa"].
+- `defaultLocale`: one of property in locales array.
 - `textDirection`: an object that map a locale to `ltr` or `rtl` (you can access locale direction via `localization.localeDirection` property, that's why is field is necessarily).
 
 <br>
 
-+ *If you using `ST2` set `enablePartition` to `true`* <br>
++ *If you are using `ST2` set `enablePartition` to `true`* <br>
 
 + If you set `enablePartition` to true, you can set `capitalizePartitionName` flag too, for more info, read [notes section](#very-important-notes) in this page.<br>
 
@@ -65,7 +65,7 @@ Now, let's configure init function, and there is 4 property required to set. ([m
 
 - ***If you using ST2, you can't change the folder structure pattern (`partitionName/[partitionName].[locale].json`), and recommend to use lowercase for the partition name, but if you capitalize the partition name, you must capitalize the partition name in translation files which are not recommended, if you want to use capitalize partition name, just set `capitalizePartitionName` to true.***
 
-- **The `capitalizePartitionName` property only works for `ST2`, and you use it when you want to capitalize the partition name, if you set this flag to `true`, `home` became `Home` when you want to access it using `get` method (i.e, `get(["Home"])`). if you using `ST1` and want capitalize name, you must do it by yourself (check out ST1 in [Available Strategies](#available-strategies) section).**
+- **The `capitalizePartitionName` property only works for `ST2`, and you use it when you want to capitalize the partition name, if you set this flag to `true`, `home` became `Home` when you want to access it using `get` method (i.e, `get(["Home"])`). if you are using `ST1` and want capitalize name, you must do it by yourself (check out ST1 in [Available Strategies](#available-strategies) section).**
 
 - **In translation files, you can use nested objects as much as you want, later in the code after calling the `get` function your IDE `intelliSense` gives you suggestions and autocomplete if you are using typescript.**
 
@@ -84,7 +84,7 @@ import { localization } from 'sc-localization/server' // if you use server local
 // somewhere in your code, when you calling `init`
 localization.init({
   path: "/public/locales", // because in public folder we have locales folder which contain localization files
-  locales: ["en", "de"] // list of locales
+  locales: ["en", "de"], // list of locales
   defaultLocale: "en",
   textDirection: {
     en: "ltr",

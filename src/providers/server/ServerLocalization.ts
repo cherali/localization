@@ -7,7 +7,7 @@ import { uniquePrimitiveArray } from "../../utils/array";
 /**
  * if you want render files on server and send rendered page to client use this class.
  *
- * this uses fs and path to read all files and you can access translation by using `get`.
+ * this uses fs and path to read all files, and you can access translation by using `get`.
  * @public
  */
 class ServerLocalization {
@@ -63,7 +63,7 @@ class ServerLocalization {
 
   /**
    * use to change locale
-   * @param locale - the locale you want to set
+   * @param handler - the handler which retrieve the locale
    * @public
    */
   static setLocale(handler: () => string) {
