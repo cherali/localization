@@ -456,5 +456,3 @@ export function getLocaleMatcher(pathname: string) {
 - *I figured out that using another cookie is the simplest way to prevent mismatch behavior when the user wants to change the locale.*
 
 - ***If you have a client component, you can't call any methods of localization class, you can create a server component, read translation texts, and pass it to client components as props.***
-
-- ***If you test this example, you might figure out that navigating between pages using the `back` and `forward` buttons, will not show the correct locale, this page is already too long, so it's up to you to fix this. (Hint: cache!!!)***
