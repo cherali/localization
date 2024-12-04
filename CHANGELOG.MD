@@ -1,4 +1,4 @@
-## 2.0.0 (December 4, 2024)
+## 2.0.0, 2.0.1 (December 4, 2024)
 
 ### Core
 + Types only importable from `sc-localization/server`, and `sc-localization/client`.
